@@ -2,10 +2,17 @@ package logical;
 
 public class Test {
 
-	public Test() {
 	
 		private int a;
-		// TODO Auto-generated constructor stub
+
+		public int getA() {
+			return a;
+		}
+
+		public void setA(int a) {
+			this.a = a;
+		}
+	
 	}
 
-}
+
