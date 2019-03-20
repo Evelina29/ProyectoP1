@@ -3,11 +3,11 @@ package logical;
 public class Admin extends Person {
 	
 	
-	private Tienda[] miTienda;
+	private static Tienda[] miTienda;
 
-	/*static {
-		miTienda = Tienda[10];
-	}*/
+	static {
+		miTienda = new  Tienda[10];
+	}
 	
 	
 	public Admin(String nombre, String apellido, String iD, String direccion) {
