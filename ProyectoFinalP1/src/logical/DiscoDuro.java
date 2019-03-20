@@ -5,7 +5,7 @@ public class DiscoDuro extends Componente{
 	private String Almacenamiento;
 	private String tipoConec;
 	
-	public DiscoDuro(String modelo, String marca, String tipo, float precio, int cantDisponible, String serie) {
+	public DiscoDuro(String modelo, String marca, String tipo, float precio, int cantDisponible, String serie,String Almacenamiento, String tipoConec) {
 		super(modelo, marca, tipo, precio, cantDisponible, serie);
 		
 		this.Almacenamiento = Almacenamiento;
