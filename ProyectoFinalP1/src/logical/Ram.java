@@ -1,5 +1,5 @@
 package logical;
 
-public class Ram {
+public class Ram extends Componente {
 
 }

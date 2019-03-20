@@ -1,5 +1,5 @@
 package logical;
 
-public class DiscoDuro {
+public class DiscoDuro extends Componente{
 
 }

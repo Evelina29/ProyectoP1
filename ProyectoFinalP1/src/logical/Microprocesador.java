@@ -1,5 +1,5 @@
 package logical;
 
-public class Microprocesador {
+public class Microprocesador extends Componente {
 
 }
