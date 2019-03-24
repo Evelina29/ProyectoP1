@@ -8,7 +8,9 @@ public abstract class Componente {
 	protected String tipo;
 	protected float precio;
 	protected int cantDisponible;
+	protected int cantMinimal;
 	protected String serie;
+	protected String nombre;
 	
 	public Componente(String modelo, String marca, String tipo, float precio, int cantDisponible, String serie) {
 		super();
@@ -31,6 +33,12 @@ public abstract class Componente {
 	public String getMarca() {
 		return marca;
 	}
+	public int getCantMinimal() {
+		return cantMinimal;
+	}
+
+
+
 	public void setMarca(String marca) {
 		this.marca = marca;
 	}
@@ -40,6 +48,12 @@ public abstract class Componente {
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
+	public String getNombre() {
+		return nombre;
+	}
+
+
+
 	public float getPrecio() {
 		return precio;
 	}

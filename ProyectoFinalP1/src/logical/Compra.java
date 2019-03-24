@@ -5,19 +5,20 @@ import java.util.Date;
 public class Compra {
 	
 	
-	private Suplidor miSuplidor;
+	private String miSuplidor;
 	private Componente miComp;
 	private int cantidad;
 	private float precio;
 	private float precioTotal;
-	private Date fecha;
+	private String fecha;
 	
-	public Compra(Suplidor miSuplidor, Componente miComp, int cantidad, float precio, Date fecha) {
+	
+	public Compra(String miSuplidor, Componente miComp, int cantidad, String fecha) {
 		super();
 		this.miSuplidor = miSuplidor;
 		this.miComp = miComp;
 		this.cantidad = cantidad;
-		this.precio = precio;
+		this.precio = miComp.getPrecio();
 		this.fecha = fecha;
 		this.precioTotal = cantidad * precio;
 		
@@ -34,10 +35,10 @@ public class Compra {
 	}
 
 
-	public Suplidor getMiSuplidor() {
+	public String getMiSuplidor() {
 		return miSuplidor;
 	}
-	public void setMiSuplidor(Suplidor miSuplidor) {
+	public void setMiSuplidor(String miSuplidor) {
 		this.miSuplidor = miSuplidor;
 	}
 	public Componente getMiComp() {
@@ -58,10 +59,10 @@ public class Compra {
 	public void setPrecio(float precio) {
 		this.precio = precio;
 	}
-	public Date getFecha() {
+	public String getFecha() {
 		return fecha;
 	}
-	public void setFecha(Date fecha) {
+	public void setFecha(String fecha) {
 		this.fecha = fecha;
 	}
 

@@ -11,7 +11,8 @@ public class TarjetaMadre extends Componente{
 		
 		this.conexiones = conexiones;
 		this.tipoDeRam = tipoDeRam;
-		
+		this.cantMinimal=100;
+		this.nombre = "Tarjeta Madre";
 	}
 
 	public String getConexiones() {

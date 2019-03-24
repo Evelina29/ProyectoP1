@@ -10,6 +10,8 @@ public class Ram extends Componente {
 		// TODO Auto-generated constructor stub
 		this.cantMemoria = cantMemoria;
 		this.tipoRam = tipoRam;
+		this.nombre = "Ram";
+		this.cantMinimal=150;
 	}
 
 	public String getCantMemoria() {
