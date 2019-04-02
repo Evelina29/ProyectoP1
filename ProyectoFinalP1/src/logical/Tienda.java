@@ -2,26 +2,33 @@ package logical;
 
 import java.util.ArrayList;
 
-public class Tienda {
 
+public class Tienda {
+	//
+	private String municipio;
+	private String direccion;
 	private ArrayList<Kit> kits;
 	private ArrayList<Componente> componentes;
 	private ArrayList<Suplidor> suplidores;
 	private ArrayList<Vendedor> vendedores;
 	private ArrayList<Factura> facturas;
 	private ArrayList<Compra> compras;
-	public static String nombre;
 
-	public Tienda() {
+	public Tienda(String direccion, String municipio) {
 		super();
-
+		this.municipio = municipio;
+		this.setDireccion(direccion);
 		this.kits = new ArrayList<Kit>();
 		this.componentes = new ArrayList<Componente>();
 		this.suplidores = new ArrayList<Suplidor>();
-		this.vendedores = vendedores;
+		this.vendedores = new ArrayList<Vendedor>();
 		this.facturas = new ArrayList<Factura>();
 		this.compras = new ArrayList<Compra>();
 
+	}
+
+	public String getMunicipio() {
+		return municipio;
 	}
 
 	// agregar un kit o varios kits
@@ -89,24 +96,34 @@ public class Tienda {
 		return true;
 	}
 
-	public boolean insertarUnaCompra(Compra compra) {
-		int cant =0;
-		if(compra.getMiComp() instanceof TarjetaMadre)
+	public void insertarUnaCompra(Compra compra) {
+		int cant = 0;
+
+		if (compra.getMiComp() instanceof TarjetaMadre)
 			cant = cantTarjetaMadre();
-		else if(compra.getMiComp() instanceof Ram)
+		else if (compra.getMiComp() instanceof Ram)
 			cant = cantRam();
+		else if (compra.getMiComp() instanceof DiscoDuro)
+			cant = cantDiscoDuro();
 		else
 			cant = cantMicroprocesador();
-		System.out.println(cant);
-		if( cant <=compra.getMiComp().getCantMinimal()) {
-			this.compras.add(compra);
-			compra.getMiComp().setCantDisponible(compra.getCantidad());
-			return true;
-		}
-		else {
-			return false;
-		}
+//
+//		if (cant <= compra.getMiComp().cant) {
+//			{
+////				DialogResponse response = Dialogs.showConfirmDialog(stage, "Do you want to continue?", "Confirm Dialog",
+////						"title");
+//			}
+//		} else {
+//			return false;
+//		}
 		
+//		return false;
+
+	}
+
+	// ahi van todos los setters
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
 	}
 	// ahi van todos los getters
 
@@ -126,6 +143,10 @@ public class Tienda {
 		return vendedores;
 	}
 
+	public String getDireccion() {
+		return direccion;
+	}
+
 	public ArrayList<Factura> getFacturas() {
 		return facturas;
 	}
@@ -134,9 +155,6 @@ public class Tienda {
 		return compras;
 	}
 
-	public static String getNombre() {
-		return nombre;
-	}
 	// cant de cada componente que tengo
 
 	// cant Tarjeta madre
@@ -145,7 +163,7 @@ public class Tienda {
 
 		for (Componente comp : componentes) {
 			if (comp instanceof TarjetaMadre) {
-				cant+=comp.getCantDisponible();
+				cant++;
 			}
 		}
 		return cant;
@@ -158,7 +176,7 @@ public class Tienda {
 
 		for (Componente comp : componentes) {
 			if (comp instanceof Ram) {
-				cant+=comp.getCantDisponible();
+				cant++;
 			}
 		}
 		return cant;
@@ -171,8 +189,22 @@ public class Tienda {
 
 		for (Componente comp : componentes) {
 			if (comp instanceof Microprocesador) {
-				cant+=comp.getCantDisponible();
+				cant++;
 			}
+
+		}
+		return cant;
+
+	}
+
+	public int cantDiscoDuro() {
+		int cant = 0;
+
+		for (Componente comp : componentes) {
+			if (comp instanceof DiscoDuro) {
+				cant++;
+			}
+
 		}
 		return cant;
 

@@ -3,10 +3,10 @@ package logical;
 public class Microprocesador extends Componente {
 	
 	private String velocidad;
-	
-	public Microprocesador(String modelo, String marca, String tipo, float precio, int cantDisponible, String serie,String velocidad) {
-		super(modelo, marca, tipo, precio, cantDisponible, serie);
-		this.cantMinimal=50;
+	public static int cantMinimal = 150;
+	public static int cantMax = 600;
+	public Microprocesador(String modelo, String marca, float precio, String serie,String velocidad) {
+		super(modelo, marca, precio, serie);	
 		this.nombre ="Microprocesador";
 		this.velocidad = velocidad;
 	}
